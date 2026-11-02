@@ -1,0 +1,852 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Little Photography Diary</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <style>
+
+        /* GENERAL */
+
+        body {
+            background-color: #fff9fb;
+            color: #51434a;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Caveat', cursive;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background-color: #ffe8ef;
+            padding: 15px;
+        }
+
+        .navbar-brand {
+            font-family: 'Caveat', cursive;
+            font-size: 30px;
+            color: #b8758c;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: #66515a;
+            font-size: 13px;
+            margin-left: 15px;
+        }
+
+        .nav-link:hover {
+            color: #c77f98;
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            background-color: #fff0f4;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 75px;
+            color: #b8758c;
+            line-height: 1;
+        }
+
+        .hero p {
+            font-size: 14px;
+            color: #86717a;
+            margin-top: 20px;
+        }
+
+        .hero img {
+            width: 85%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-top: 30px;
+            transform: rotate(-2deg);
+            border: 8px solid white;
+            box-shadow: 3px 5px 15px #e8cbd5;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: #e9b9ca;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            margin-top: 20px;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            background-color: #c77f98;
+            color: white;
+        }
+
+        /* SECTION */
+
+        .section {
+            padding: 65px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 50px;
+            color: #b8758c;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 13px;
+            color: #a28d96;
+            margin-bottom: 40px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background-color: #ffffff;
+        }
+
+        .about img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 8px solid #fff0f4;
+        }
+
+        .about h2 {
+            font-size: 45px;
+            color: #b8758c;
+        }
+
+        .about p {
+            font-size: 14px;
+            line-height: 2;
+            color: #86717a;
+        }
+
+        /* GALLERY */
+
+        .gallery {
+            background-color: #fff0f4;
+        }
+
+        .photo-card {
+            background-color: white;
+            padding: 10px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 2px 3px 10px #eed6df;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: 0.4s;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-5px) rotate(1deg);
+            box-shadow: 3px 8px 15px #e4c2ce;
+        }
+
+        .photo-card h3 {
+            color: #b8758c;
+            font-size: 27px;
+            margin-top: 12px;
+        }
+
+        .photo-card p {
+            color: #a28d96;
+            font-size: 12px;
+        }
+
+        /* MY FAVORITE QUOTE */
+
+        .quote {
+            background-color: #f8dce6;
+            padding: 55px 20px;
+            text-align: center;
+        }
+
+        .quote h2 {
+            font-size: 42px;
+            color: #a76c83;
+        }
+
+        .quote p {
+            font-size: 13px;
+            color: #a77b8c;
+        }
+
+        /* MY CAMERA */
+
+        .camera-section {
+            background-color: white;
+            text-align: center;
+        }
+
+        .camera-box {
+            background-color: #fff4f7;
+            padding: 30px;
+            border-radius: 15px;
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .camera-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .camera-box i {
+            font-size: 35px;
+            color: #c77f98;
+        }
+
+        .camera-box h3 {
+            font-size: 30px;
+            color: #b8758c;
+            margin-top: 15px;
+        }
+
+        .camera-box p {
+            font-size: 13px;
+            color: #86717a;
+            line-height: 1.8;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background-color: #fff0f4;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 55px;
+            color: #b8758c;
+        }
+
+        .contact p {
+            font-size: 14px;
+            color: #86717a;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background-color: #f8dce6;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer p {
+            font-size: 12px;
+            color: #987583;
+        }
+
+        footer i {
+            font-size: 20px;
+            color: #b8758c;
+            margin: 0 10px;
+        }
+
+        /* JQUERY ANIMATION */
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: 0.8s;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            .hero img {
+                height: 280px;
+            }
+
+            .section-title {
+                font-size: 42px;
+            }
+
+            .about h2 {
+                margin-top: 25px;
+            }
+
+            .photo-card img {
+                height: 220px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#home">
+            my little diary ♡
+        </a>
+
+        <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse" data-bs-target="#menu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About me</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">My photos</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Say hello</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <p>♡ welcome to my little corner of the internet ♡</p>
+
+        <h1>
+            Life through<br>
+            my camera
+        </h1>
+
+        <p>
+            just a girl who loves taking pictures of everything
+        </p>
+
+        <img
+        src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=900"
+        alt="A beautiful sunset">
+
+        <br>
+
+        <a href="#gallery" class="hero-btn">
+            take a little look ♡
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT ME -->
+
+<section class="section about" id="about">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-md-6 fade-in">
+
+                <img
+                src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=900"
+                alt="Camera and photography">
+
+            </div>
+
+            <div class="col-md-6 fade-in">
+
+                <h2>Hi, that's me! ♡</h2>
+
+                <p>
+                    I'm someone who loves noticing little things
+                    that other people might not even see.
+                </p>
+
+                <p>
+                    I started taking pictures just because
+                    I thought it was fun. The sky, flowers,
+                    random streets, sunsets and sometimes
+                    even my own shadow!
+                </p>
+
+                <p>
+                    I'm still learning, experimenting and
+                    figuring out my style. But I guess
+                    that's the fun part.
+                </p>
+
+                <p>
+                    This is my little space to share
+                    the things I see and love.
+                </p>
+
+                <h3 style="color:#c77f98;font-size:30px;">
+                    happy clicking! ♡
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MY PHOTOGRAPHY GALLERY -->
+
+<section class="section gallery" id="gallery">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            little moments i've captured
+        </h2>
+
+        <p class="section-subtitle">
+            a few of my favorite pictures so far ♡
+        </p>
+
+        <div class="row">
+
+            <!-- PHOTO 1 -->
+
+            <div class="col-md-4 fade-in">
+
+                <div class="photo-card">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=700"
+                    alt="Beautiful mountains">
+
+                    <h3>somewhere peaceful</h3>
+
+                    <p>
+                        wish i could stay here forever
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- PHOTO 2 -->
+
+            <div class="col-md-4 fade-in">
+
+                <div class="photo-card">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=700"
+                    alt="Pretty flowers">
+
+                    <h3>flower things</h3>
+
+                    <p>
+                        flowers make everything better
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- PHOTO 3 -->
+
+            <div class="col-md-4 fade-in">
+
+                <div class="photo-card">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=700"
+                    alt="Nature and greenery">
+
+                    <h3>little adventures</h3>
+
+                    <p>
+                        just going wherever the road takes me
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- PHOTO 4 -->
+
+            <div class="col-md-4 fade-in">
+
+                <div class="photo-card">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=700"
+                    alt="Night sky">
+
+                    <h3>the sky tonight</h3>
+
+                    <p>
+                        can't stop looking at the stars
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- PHOTO 5 -->
+
+            <div class="col-md-4 fade-in">
+
+                <div class="photo-card">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700"
+                    alt="Beach and ocean">
+
+                    <h3>blue little world</h3>
+
+                    <p>
+                        ocean sounds = instant happiness
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- PHOTO 6 -->
+
+            <div class="col-md-4 fade-in">
+
+                <div class="photo-card">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=700"
+                    alt="Waves in the ocean">
+
+                    <h3>somewhere by the sea</h3>
+
+                    <p>
+                        collecting moments, not things
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- QUOTE -->
+
+<section class="quote">
+
+    <div class="container fade-in">
+
+        <h2>
+            "i don't need perfect pictures,<br>
+            just memories i can keep forever."
+        </h2>
+
+        <p class="mt-3">
+            ♡ a little reminder to enjoy the moment ♡
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- THINGS I LOVE -->
+
+<section class="section camera-section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            things i love capturing
+        </h2>
+
+        <p class="section-subtitle">
+            basically anything that makes me stop and look
+        </p>
+
+        <div class="row g-4">
+
+            <div class="col-md-4 fade-in">
+
+                <div class="camera-box">
+
+                    <i class="bi bi-flower1"></i>
+
+                    <h3>Nature</h3>
+
+                    <p>
+                        flowers, trees, clouds and
+                        random pretty things
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4 fade-in">
+
+                <div class="camera-box">
+
+                    <i class="bi bi-sun"></i>
+
+                    <h3>Golden hour</h3>
+
+                    <p>
+                        that soft sunlight which
+                        makes everything look magical
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4 fade-in">
+
+                <div class="camera-box">
+
+                    <i class="bi bi-heart"></i>
+
+                    <h3>Everyday life</h3>
+
+                    <p>
+                        little moments with friends,
+                        family and myself
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="section contact" id="contact">
+
+    <div class="container fade-in">
+
+        <h2>let's be friends ♡</h2>
+
+        <p>
+            have a favorite picture or just want to say hi?
+        </p>
+
+        <p>
+            i'd love to hear from you!
+        </p>
+
+        <a href="mailto:hello@example.com" class="hero-btn">
+            send me a little hello
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3 style="font-size:35px;color:#b8758c;">
+        my little diary ♡
+    </h3>
+
+    <p>
+        made with love, a camera and a little bit of pink
+    </p>
+
+    <div class="my-3">
+
+        <a href="#">
+            <i class="bi bi-instagram"></i>
+        </a>
+
+        <a href="#">
+            <i class="bi bi-pinterest"></i>
+        </a>
+
+    </div>
+
+    <p>
+        © 2026 My Little Photography Diary
+    </p>
+
+</footer>
+
+
+<!-- JQUERY -->
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- BOOTSTRAP JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- CUSTOM JQUERY -->
+
+<script>
+
+$(document).ready(function() {
+
+    // 1. FADE IN ANIMATION
+
+    function showElements() {
+
+        $('.fade-in').each(function() {
+
+            let elementPosition = $(this).offset().top;
+
+            let screenPosition =
+                $(window).scrollTop() + $(window).height() - 50;
+
+            if (elementPosition < screenPosition) {
+
+                $(this).addClass('show');
+
+            }
+
+        });
+
+    }
+
+    $(window).on('scroll', showElements);
+
+    showElements();
+
+
+    // 2. SMOOTH SCROLLING
+
+    $('a[href^="#"]').on('click', function(event) {
+
+        let target = $(this).attr('href');
+
+        if ($(target).length) {
+
+            event.preventDefault();
+
+            $('html, body').animate({
+
+                scrollTop: $(target).offset().top - 60
+
+            }, 700);
+
+            $('.navbar-collapse').collapse('hide');
+
+        }
+
+    });
+
+
+    // 3. PHOTO HOVER EFFECT
+
+    $('.photo-card').hover(
+
+        function() {
+
+            $(this).find('img').css('transform', 'scale(1.05)');
+
+        },
+
+        function() {
+
+            $(this).find('img').css('transform', 'scale(1)');
+
+        }
+
+    );
+
+
+    // 4. SMALL WELCOME ANIMATION
+
+    $('.hero h1').hide().fadeIn(1500);
+
+
+});
+
+</script>
+
+</body>
+</html>
